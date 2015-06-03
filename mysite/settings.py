@@ -32,7 +32,7 @@ SECRET_KEY = '3p8fq$(+2w*fc4&(!y2mk3+n6+j17iju@lssk@k_h_q28q4y0='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = TEMPLATE_DEBUG = True   # development
 
 ALLOWED_HOSTS = []
 

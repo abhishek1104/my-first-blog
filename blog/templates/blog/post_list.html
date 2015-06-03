@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load staticfiles %} <!-- New line -->
+<html>
+
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Published Posts are as following...</h1>
+        hello world! <br/>
+        {% for post in posts %}
+            <div>
+                <p> Publish Date: {{ post.published_date }} </p> <!--This is a comment. Here post is a Django template variable -->
+                <strong><a href=""> {{ post.title }} </strong>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
+        <a href="/">About</a><br />
+    </body>
+
+</html>
