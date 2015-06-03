@@ -12,7 +12,7 @@ def index1(request):
     return render(request, 'blog/post_default.html', context_dict)
 
 def post_list(request):
-    posts=Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts=Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     context_dict={'posts' : posts}
     return render(request,'blog/post_list.html', context_dict)
    
