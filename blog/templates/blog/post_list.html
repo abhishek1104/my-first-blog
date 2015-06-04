@@ -1,38 +1,14 @@
-<!DOCTYPE html>
-{% load staticfiles %} <!-- Tells django that static files are to be used in this template -->
-<html>
 
-    <head>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <title>Abhishek Sharma</title>
-    </head>
+{% extends 'blog/base.html' %}
 
-    <body>
-        <div class="page-header">
-        <h1>Published Posts are as following...</h1>
-        <h2>hello world!</h2>
-        </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                 {% for post in posts %}
-                <br/>
-                    <div class="post">
-                            <strong><a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a></strong>
-                            <p>{{ post.text|linebreaks }}</p>
-                            <p>{{ post.author }}
-                            <p> Publish Date: {{ post.published_date }} </p> <!--This is a comment. Here post is a Django template variable -->
-                    </div>
-                {% endfor %}
-                </div>
+{% block content %}
+    {% for post in posts %}
+        <br/>
+        <div class="post">
+            <strong><a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a></strong>
+            <p>{{ post.text|linebreaks }}</p>
+            <p>{{ post.author }}
+            <p> Publish Date: {{ post.published_date }} </p> <!--This is a comment. Here post is a Django template variable -->
             </div>
-        </div>
-
-        
-        <a href="/">About</a><br />
-    </body>
-
-</html>
+    {% endfor %}
+{% endblock content %}
