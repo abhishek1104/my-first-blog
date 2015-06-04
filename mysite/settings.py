@@ -32,7 +32,7 @@ SECRET_KEY = '3p8fq$(+2w*fc4&(!y2mk3+n6+j17iju@lssk@k_h_q28q4y0='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = TEMPLATE_DEBUG = True   # development
+DEBUG = True   
 
 ALLOWED_HOSTS = []
 
@@ -98,9 +98,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'djangogirls',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': '',
         'HOST' : '127.0.0.1',
-        'PORT' : '3306',
+        'PORT' : '3310',
     }
 }
 
